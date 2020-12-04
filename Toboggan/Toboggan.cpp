@@ -48,7 +48,7 @@ int main()
     cout << "The number of trees multiplied together is: " << product << endl;
 }
 
-// functiont hat finds the number of trees
+// functiont that finds the number of trees
 int findtrees(char (*arr)[31], int right, int down) {
 
     // starting file of char to check
