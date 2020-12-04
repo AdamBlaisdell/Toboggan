@@ -49,7 +49,8 @@ int main()
 }
 
 // functiont that finds the number of trees
-int findtrees(char (*arr)[31], int right, int down) {
+int findtrees(char (*arr)[31], int right, int down) 
+{
 
     // starting file of char to check
     int j = 0;
@@ -61,7 +62,8 @@ int findtrees(char (*arr)[31], int right, int down) {
     for (int i = 0; i < 323; i += down)
     {
         // if character is a tree, add 1 to tree count
-        if (arr[i][j] == '#') {
+        if (arr[i][j] == '#') 
+        {
             trees += 1;
         }
 
