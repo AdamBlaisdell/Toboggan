@@ -11,6 +11,10 @@ int findtrees(char (*arr)[31], int right, int down); // prototype
 
 int main()
 {
+
+    const int rows = 323;
+    const int col = 31;
+
     // format output
     cout.setf(ios_base::fixed);
     std::cout.precision(0);
@@ -19,13 +23,13 @@ int main()
     ifstream file;
     file.open("Text.txt");
 
-    // create array
-    char patternarray[323][31];
+    // create array for pattern
+    char patternarray[rows][col];
 
     // populate array with pattern
-    for (int r = 0; r < 323; r++)
+    for (int r = 0; r < rows; r++)
     {
-        for (int c = 0; c < 31; c++)
+        for (int c = 0; c < col; c++)
         {
             file >> patternarray[r][c];
         }
@@ -49,29 +53,30 @@ int main()
 }
 
 // functiont that finds the number of trees
-int findtrees(char (*arr)[31], int right, int down) 
+int findtrees(char (*arr)[31], int right, int down)
 {
+    const int rows = 323;
 
-    // starting file of char to check
+    // col of char to check
     int j = 0;
 
     // tree count
     int trees = 0;
 
-    // loop that moves down "down" number of files
-    for (int i = 0; i < 323; i += down)
+    // loop that moves down "down" number of rows
+    for (int i = 0; i < rows; i += down)
     {
         // if character is a tree, add 1 to tree count
-        if (arr[i][j] == '#') 
+         if (arr[i][j] == '#') 
         {
             trees += 1;
         }
 
-        // loop that move to the right "right" number files
+        // loop that move to the right "right" number cols
         for (int k = 0; k < right; ++k)
         {
             ++j;
-            // if file position is longer than length of the line: return to front of line
+            // if col position is longer than length of the line: return to front of line
             if (j > 30)
                 j = 0;
         }
